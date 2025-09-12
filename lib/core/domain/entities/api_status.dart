@@ -1,0 +1,1 @@
+enum APIStatus { success, failed }

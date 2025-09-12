@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'paginated_response.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+_$PaginatedResponseImpl<T> _$$PaginatedResponseImplFromJson<T>(
+  Map<String, dynamic> json,
+  T Function(Object? json) fromJsonT,
+) =>
+    _$PaginatedResponseImpl<T>(
+      count: (json['count'] as num?)?.toInt() ?? 0,
+      next: json['next'] as String?,
+      previous: json['previous'] as String?,
+      results: (json['results'] as List<dynamic>?)?.map(fromJsonT).toList() ??
+          const [],
+    );
+
+Map<String, dynamic> _$$PaginatedResponseImplToJson<T>(
+  _$PaginatedResponseImpl<T> instance,
+  Object? Function(T value) toJsonT,
+) =>
+    <String, dynamic>{
+      'count': instance.count,
+      if (instance.next case final value?) 'next': value,
+      if (instance.previous case final value?) 'previous': value,
+      'results': instance.results.map(toJsonT).toList(),
+    };
