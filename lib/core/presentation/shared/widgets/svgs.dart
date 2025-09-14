@@ -1,4 +1,5 @@
 class AppSvgs {
+  static const String kNovaLogo = "assets/svg/nova_logo.svg";
   static const String kGoogleIcon = "assets/svgs/google_icon.svg";
 
   //Dashboard

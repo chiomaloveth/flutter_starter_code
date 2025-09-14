@@ -11,8 +11,8 @@ class AppColors {
   static const Color kGreyContainer = Color(0xffE5E5E5);
   static const Color kDasboardInactiveIcon = Color(0xffABABAB);
   static const Color kGrey200 = Color(0xffF2F2F2);
-  static const Color kButtonDisabledColor = Color(0xFF341401); 
+  static const Color kButtonDisabledColor = Color(0xFF341401);
   static const Color kSuccessColor = Color(0xFF74DA2F);
   static const Color kWarning = Color(0xFFF9A410);
-  
+  static const Color kBackgroundColor = Color(0xFFFEFCE8);
 }

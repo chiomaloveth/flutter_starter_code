@@ -1,6 +1,8 @@
 class AppImage {
   //App logo
-  static const String kLSMLogo = "assets/images/lsm_logo.png";
+  static const String kNovaLogo = "assets/images/lsm_logo.png";
+  static const String kNovaOnboardingLogoBackground =
+      "assets/images/lsm_logo.png";
   static const String kWhiteLSMLogo = 'assets/images/lsm_logo_white.png';
 
   //Onboarding

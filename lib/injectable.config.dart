@@ -54,27 +54,27 @@ extension GetItInjectableX on _i174.GetIt {
       environmentFilter,
     );
     final injectableModule = _$InjectableModule();
-    final firebaseModule = _$FirebaseModule();
     final audioPlayerModule = _$AudioPlayerModule();
+    final firebaseModule = _$FirebaseModule();
     final sharedPreferencesModule = _$SharedPreferencesModule();
     final dioModule = _$DioModule();
     await gh.factoryAsync<_i655.PackageInfo>(
       () => injectableModule.packageInfo,
       preResolve: true,
     );
+    gh.singleton<_i501.AudioPlayer>(() => audioPlayerModule.audioPlayer());
     gh.singleton<_i627.FirebaseRemoteConfig>(() => firebaseModule.remoteConfig);
     gh.singleton<_i398.FirebaseAnalytics>(() => firebaseModule.analytics);
-    gh.singleton<_i501.AudioPlayer>(() => audioPlayerModule.audioPlayer());
     await gh.singletonAsync<_i460.SharedPreferences>(
       () => sharedPreferencesModule.sharedPreferences,
       preResolve: true,
     );
     gh.singleton<_i558.FlutterSecureStorage>(
         () => sharedPreferencesModule.secureStorage);
-    gh.lazySingleton<_i48.TokenLocalStorage>(() => _i48.TokenLocalStorage());
-    gh.lazySingleton<_i86.GeneralUtility>(() => _i86.GeneralUtility());
-    gh.lazySingleton<_i320.FilePickerService>(() => _i320.FilePickerService());
     gh.lazySingleton<_i72.AppStartService>(() => _i72.AppStartService());
+    gh.lazySingleton<_i320.FilePickerService>(() => _i320.FilePickerService());
+    gh.lazySingleton<_i86.GeneralUtility>(() => _i86.GeneralUtility());
+    gh.lazySingleton<_i48.TokenLocalStorage>(() => _i48.TokenLocalStorage());
     gh.lazySingleton<_i489.LocalStorageService>(() =>
         _i489.FlutterSecureStorageService(
             secureStorage: gh<_i558.FlutterSecureStorage>()));
@@ -111,9 +111,9 @@ extension GetItInjectableX on _i174.GetIt {
 
 class _$InjectableModule extends _i1027.InjectableModule {}
 
-class _$FirebaseModule extends _i121.FirebaseModule {}
-
 class _$AudioPlayerModule extends _i288.AudioPlayerModule {}
+
+class _$FirebaseModule extends _i121.FirebaseModule {}
 
 class _$SharedPreferencesModule extends _i80.SharedPreferencesModule {}
 
