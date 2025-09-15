@@ -106,3 +106,9 @@ flutter:
         - asset: assets/fonts/Poppins-Light.ttf
           weight: 300
           style: normal
+
+flutter_native_splash:
+  color: "#ff341401"
+  image: assets/images/nova_logo.png
+  android: true
+  ios: true
