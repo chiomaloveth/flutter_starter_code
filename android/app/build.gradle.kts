@@ -1,11 +1,23 @@
+plugins {
+    id("com.android.application")
+    id("kotlin-android")
+    id("dev.flutter.flutter-gradle-plugin")
+}
+
 android {
     namespace = "com.example.nova"
-    compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    compileSdk = 35
+    ndkVersion = "27.0.12077973"
+
+    packaging {
+        resources.excludes.add("META-INF/versions/9/OSGI-INF/MANIFEST.MF")
+    }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
+        // Enable core library desugaring (if you still need it for flutter_local_notifications)
+        isCoreLibraryDesugaringEnabled = true
     }
 
     kotlinOptions {
@@ -14,10 +26,10 @@ android {
 
     defaultConfig {
         applicationId = "com.example.nova"
-        minSdk = flutter.minSdkVersion
-        targetSdk = flutter.targetSdkVersion
-        versionCode = flutter.versionCode
-        versionName = flutter.versionName
+        minSdk = 24
+        targetSdk = 35
+        versionCode = 1
+        versionName = "1.0"
     }
 
     buildTypes {
@@ -31,17 +43,22 @@ android {
     productFlavors {
         create("development") {
             dimension = "default"
-            manifestPlaceholders = mapOf("appName" to "[DEV] Creating Flavors")
             applicationIdSuffix = ".dev"
+            manifestPlaceholders["appName"] = "[DEV] Creating Flavors"
         }
         create("production") {
             dimension = "default"
-            manifestPlaceholders = mapOf("appName" to "Creating Flavors")
             applicationIdSuffix = ""
+            manifestPlaceholders["appName"] = "Creating Flavors"
         }
     }
 }
 
 flutter {
     source = "../.."
+}
+
+dependencies {
+    // Core library desugaring (required for flutter_local_notifications)
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
 }

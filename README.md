@@ -1,6 +1,5 @@
 # Nova Mobile
 
-Niigma
 
 # Running the app
 
