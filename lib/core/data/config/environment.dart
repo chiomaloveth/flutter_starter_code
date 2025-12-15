@@ -10,11 +10,11 @@ enum AppEnvironment {
   test;
 
   String get apiUrl => switch (this) {
-    AppEnvironment.prod => 'https://niigma-backend-service-6gdy.onrender.com',
-    _ => 'https://niigma-backend-service-6gdy.onrender.com',
+    AppEnvironment.prod => '',
+    _ => '',
   };
   String get apiDomain => switch (this) {
-    _ => 'https://niigma-backend-service-6gdy.onrender.com',
+    _ => '',
   };
 
   bool get isProd => this == AppEnvironment.prod;
